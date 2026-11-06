@@ -19,7 +19,7 @@ Bộ bài học Trung cấp 4: 42 ngày, mỗi ngày 5 từ mới, học từ B�
 | Trung cấp 2 | 355 | 71 | [Mở](https://vinhnd2026.github.io/TrungCap2/) |
 | Trung cấp 3 | 236 | 48 | [Mở](https://vinhnd2026.github.io/TrungCap3/) |
 | Trung cấp 4 | 206 | 42 | ⏳ đang hoàn thiện |
-| Cao cấp 1 | 447 | 90 | ⏳ đang hoàn thiện |
+| Cao cấp 1 | 447 | 90 | [Mở](https://vinhnd2026.github.io/CaoCap1/) |
 | Cao cấp 2 | 405 | 81 | ⏳ đang hoàn thiện |
 | Cao cấp 3 | 353 | 71 | ⏳ đang hoàn thiện |
 | Cao cấp 4 | 357 | 72 | ⏳ đang hoàn thiện |
