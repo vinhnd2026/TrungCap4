@@ -190,6 +190,15 @@ img, svg { max-width: 100%; }
 .sentence-sub.cover.covered::after { content: "👁 Bấm để xem pinyin + dịch nghĩa"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 13px; font-weight: 600; }
 /* --- Nghĩa tiếng Việt của từ mới (ngay dưới tiêu đề thẻ từ) --- */
 .word-meaning { font-size: 15px; color: #1e293b; margin: 2px 0 10px; }
+
+.dlg-line{padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:8px;background:#fff}
+.dlg-sp{display:inline-block;padding:2px 9px;border-radius:12px;color:#fff;font-weight:700;font-size:13px;margin-right:8px;vertical-align:middle}
+.dlg-zh{font-size:17px;line-height:1.9}
+.dlg-zh ruby rt{font-size:.52em;color:#2563eb}
+.dlg-zh.hide-ruby rt{display:none}
+.dlg-vi{color:#64748b;font-size:14px;margin:2px 0 0 30px}
+.dlg-voice-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0}
+.dlg-voice-row select{max-width:100%;padding:4px 6px;border:1px solid #d1d5db;border-radius:6px;font-size:14px}
 </style>
 </head>
 <body>
@@ -197,7 +206,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 28</b>
+    <b id="prog-text">0 / 32</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -677,6 +686,80 @@ img, svg { max-width: 100%; }
 <div class="feedback" style="margin-top:6px;"></div></div>
 </div>
 <div class="card">
+<h2>🎧 Bài 8: Nghe hội thoại – Suy luận <span class="badge">Nghe hiểu Trung cấp 4</span></h2>
+<div class="sub" style="margin-bottom:8px;">Nghe đoạn hội thoại giữa 小明 và 小红 (15 câu), rồi chọn đáp án đúng cho 4 câu hỏi bên dưới. Lời thoại đang ẩn — hãy nghe trước, chỉ hiện lời thoại khi nghe không rõ. Tình huống: Dì của 小红 dạy y học ở đại học, còn 小明 bị đau ngực phải đi bệnh viện.</div>
+<div class="reading-box">
+<div class="reading-Controls">
+<button class="tts-btn" onclick="playDlgAll()">▶️ Nghe cả đoạn hội thoại</button>
+<button class="tts-btn" id="dlg-pause-btn" onclick="toggleDlgPause()">⏸️ Tạm dừng</button>
+<button class="tts-btn" onclick="stopDlg()">⏹️ Dừng</button>
+<button class="btn-sm" id="dlg-toggle" onclick="toggleDlgScript()">👁️ Hiện lời thoại</button>
+<button class="btn-sm" onclick="toggleDlgRuby()">🔤 Ẩn/Hiện Pinyin</button>
+</div>
+<div style="margin-top:8px;"><span class="hint">Tốc độ:</span>
+<input type="range" id="dlg-speed-range" min="0.5" max="1.5" step="0.01" value="0.88" oninput="setDlgRateNum(this.value)" style="vertical-align:middle;width:160px">
+<input type="number" id="dlg-speed-num" min="0.5" max="1.5" step="0.05" value="0.88" onchange="setDlgRateNum(this.value)" style="width:70px;padding:4px 6px;border:1px solid #d1d5db;border-radius:6px;font-size:14px"> ×
+</div>
+<div id="dlg-voice-pickers" style="margin-top:8px;"><span class="hint">Đang kiểm tra giọng đọc trên thiết bị…</span></div>
+<div class="hint" id="dlg-voice-note" style="margin-top:4px;"></div>
+<div style="margin:8px 0;"><span class="hint">Nghe từng câu:</span> <button class="tts-btn" onclick="playDlgLine(0)">1</button> <button class="tts-btn" onclick="playDlgLine(1)">2</button> <button class="tts-btn" onclick="playDlgLine(2)">3</button> <button class="tts-btn" onclick="playDlgLine(3)">4</button> <button class="tts-btn" onclick="playDlgLine(4)">5</button> <button class="tts-btn" onclick="playDlgLine(5)">6</button> <button class="tts-btn" onclick="playDlgLine(6)">7</button> <button class="tts-btn" onclick="playDlgLine(7)">8</button> <button class="tts-btn" onclick="playDlgLine(8)">9</button> <button class="tts-btn" onclick="playDlgLine(9)">10</button> <button class="tts-btn" onclick="playDlgLine(10)">11</button> <button class="tts-btn" onclick="playDlgLine(11)">12</button> <button class="tts-btn" onclick="playDlgLine(12)">13</button> <button class="tts-btn" onclick="playDlgLine(13)">14</button> <button class="tts-btn" onclick="playDlgLine(14)">15</button></div>
+<div class="dlg-script" id="dlg-script" style="display:none">
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>小<rt>Xiǎo</rt></ruby><ruby>红<rt>Hóng,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>姨<rt>yí</rt></ruby><ruby>妈<rt>mā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>老<rt>lǎo</rt></ruby><ruby>师<rt>shī</rt></ruby><ruby>吗<rt>ma</rt></ruby>？</span><div class="dlg-vi">Tiểu Hồng, dì của bạn là giáo viên à?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>我<rt>Wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>姨<rt>yí</rt></ruby><ruby>妈<rt>mā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>老<rt>lǎo</rt></ruby><ruby>师<rt>shī,</rt></ruby>，<ruby>她<rt>tā</rt></ruby><ruby>教<rt>jiāo</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>学<rt>xué</rt></ruby>。</span><div class="dlg-vi">Dì tôi là giáo viên, dì dạy y học.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>你<rt>Nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>姨<rt>yí</rt></ruby><ruby>妈<rt>mā</rt></ruby><ruby>教<rt>jiāo</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>学<rt>xué,</rt></ruby>，<ruby>她<rt>tā</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>学<rt>xué</rt></ruby><ruby>吗<rt>ma</rt></ruby>？</span><div class="dlg-vi">Dì bạn dạy y học, dì ở đại học à?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>她<rt>Tā</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>学<rt>xué</rt></ruby><ruby>教<rt>jiāo</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>学<rt>xué.</rt></ruby>。<ruby>你<rt>Nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>胸<rt>xiōng</rt></ruby><ruby>口<rt>kǒu</rt></ruby><ruby>怎<rt>zěn</rt></ruby><ruby>么<rt>me</rt></ruby><ruby>了<rt>le</rt></ruby>？</span><div class="dlg-vi">Dì ở đại học dạy y học. Ngực của bạn sao vậy?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>我<rt>Wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>胸<rt>xiōng</rt></ruby><ruby>口<rt>kǒu</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>好<rt>hǎo,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>生<rt>shēng</rt></ruby>。</span><div class="dlg-vi">Ngực của tôi không tốt, tôi đi bệnh viện gặp bác sĩ.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>你<rt>Nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>不<rt>bú</rt></ruby><ruby>要<rt>yào</rt></ruby><ruby>担<rt>dān</rt></ruby><ruby>心<rt>xīn,</rt></ruby>，<ruby>好<rt>hǎo</rt></ruby><ruby>吗<rt>ma</rt></ruby>？</span><div class="dlg-vi">Bạn đi bệnh viện, bạn đừng lo lắng, được không?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>我<rt>Wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>担<rt>dān</rt></ruby><ruby>心<rt>xīn.</rt></ruby>。<ruby>你<rt>Nǐ</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>什<rt>shén</rt></ruby><ruby>么<rt>me</rt></ruby><ruby>意<rt>yì</rt></ruby><ruby>见<rt>jiàn</rt></ruby>？</span><div class="dlg-vi">Tôi không lo lắng. Bạn có ý kiến gì?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>我<rt>Wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>意<rt>yì</rt></ruby><ruby>见<rt>jiàn</rt></ruby><ruby>是<rt>shì,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>生<rt>shēng,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>会<rt>huì</rt></ruby><ruby>好<rt>hǎo</rt></ruby><ruby>的<rt>de</rt></ruby>。</span><div class="dlg-vi">Ý kiến của tôi là, bạn đi bệnh viện gặp bác sĩ, bạn sẽ tốt thôi.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>谢<rt>Xiè</rt></ruby><ruby>谢<rt>xie</rt></ruby><ruby>你<rt>nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>意<rt>yì</rt></ruby><ruby>见<rt>jiàn</rt></ruby>。</span><div class="dlg-vi">Cảm ơn ý kiến của bạn.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>你<rt>Nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn,</rt></ruby>，<ruby>不<rt>bú</rt></ruby><ruby>要<rt>yào</rt></ruby><ruby>说<rt>shuō</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>隐<rt>yǐn</rt></ruby><ruby>私<rt>sī,</rt></ruby>，<ruby>好<rt>hǎo</rt></ruby><ruby>吗<rt>ma</rt></ruby>？</span><div class="dlg-vi">Bạn đi bệnh viện, đừng nói chuyện riêng tư của tôi, được không?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>我<rt>Wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>说<rt>shuō</rt></ruby><ruby>你<rt>nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>隐<rt>yǐn</rt></ruby><ruby>私<rt>sī.</rt></ruby>。<ruby>你<rt>Nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>隐<rt>yǐn</rt></ruby><ruby>私<rt>sī,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>问<rt>wèn</rt></ruby>。</span><div class="dlg-vi">Tôi không nói chuyện riêng tư của bạn. Chuyện riêng tư của bạn, tôi không hỏi.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>谢<rt>Xiè</rt></ruby><ruby>谢<rt>xie</rt></ruby><ruby>你<rt>nǐ.</rt></ruby>。<ruby>你<rt>Nǐ</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>朋<rt>péng</rt></ruby><ruby>友<rt>you,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>很<rt>hěn</rt></ruby><ruby>高<rt>gāo</rt></ruby><ruby>兴<rt>xìng</rt></ruby>。</span><div class="dlg-vi">Cảm ơn bạn. Bạn là bạn của tôi, tôi rất vui.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>你<rt>Nǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>胸<rt>xiōng</rt></ruby><ruby>口<rt>kǒu</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>好<rt>hǎo,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>吗<rt>ma</rt></ruby>？</span><div class="dlg-vi">Ngực của bạn không tốt, bạn đi bệnh viện, tôi đi không?</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#2563eb">小明</span> <span class="dlg-zh hide-ruby"><ruby>好<rt>Hǎo,</rt></ruby>，<ruby>明<rt>míng</rt></ruby><ruby>天<rt>tiān</rt></ruby><ruby>你<rt>nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>学<rt>xué,</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>姨<rt>yí</rt></ruby><ruby>妈<rt>mā,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>院<rt>yuàn</rt></ruby>。</span><div class="dlg-vi">Được, ngày mai bạn đi đại học, bạn đi thăm dì, tôi đi bệnh viện.</div></div>
+<div class="dlg-line"><span class="dlg-sp" style="background:#db2777">小红</span> <span class="dlg-zh hide-ruby"><ruby>明<rt>Míng</rt></ruby><ruby>天<rt>tiān</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>学<rt>xué.</rt></ruby>。<ruby>我<rt>Wǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>姨<rt>yí</rt></ruby><ruby>妈<rt>mā</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>学<rt>xué</rt></ruby><ruby>教<rt>jiāo</rt></ruby><ruby>医<rt>yī</rt></ruby><ruby>学<rt>xué,</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>她<rt>tā</rt></ruby>。</span><div class="dlg-vi">Ngày mai tôi đi đại học. Dì tôi ở đại học dạy y học, tôi đi thăm dì.</div></div>
+</div>
+<div class="hint" id="dlg-tip">💡 Mẹo: nghe 2–3 lần trước khi hiện lời thoại. Chọn giọng cho từng người ở trên — giọng nam cho người nam, giọng nữ cho người nữ, bấm 🔊 Nghe thử để nghe giọng trước khi chọn.</div>
+</div>
+<div class="q-item" id="dlg-1">
+<div><b>Câu 1.</b> 小红的姨妈教什么？ <span class="hint">(Dì của Tiểu Hồng dạy gì?)</span></div>
+<div class="mc-options">
+<button class="mc-btn" onclick="checkMC(this, true, 'dlg-1', '✓ Chính xác！小红：我的姨妈是老师，她教医学。')">A. 医学</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-1', '✗ Chưa đúng：小红：我的姨妈是老师，她教医学。')">B. 汉语</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-1', '✗ Chưa đúng：小红：我的姨妈是老师，她教医学。')">C. 音乐</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-1', '✗ Chưa đúng：小红：我的姨妈是老师，她教医学。')">D. 数学</button>
+</div>
+<div class="feedback" style="margin-top:6px;"></div></div>
+<div class="q-item" id="dlg-2">
+<div><b>Câu 2.</b> 小明为什么去医院？ <span class="hint">(Vì sao Tiểu Minh đi bệnh viện?)</span></div>
+<div class="mc-options">
+<button class="mc-btn" onclick="checkMC(this, true, 'dlg-2', '✓ Chính xác！小明：我的胸口不好，我去医院看医生。')">A. 因为他的胸口不好</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-2', '✗ Chưa đúng：小明：我的胸口不好，我去医院看医生。')">B. 因为他很喜欢医院</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-2', '✗ Chưa đúng：小明：我的胸口不好，我去医院看医生。')">C. 因为他去工作</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-2', '✗ Chưa đúng：小明：我的胸口不好，我去医院看医生。')">D. 因为他去学习</button>
+</div>
+<div class="feedback" style="margin-top:6px;"></div></div>
+<div class="q-item" id="dlg-3">
+<div><b>Câu 3.</b> 小明觉得小红的意见怎么样？ <span class="hint">(Tiểu Minh thấy ý kiến của Tiểu Hồng thế nào?)</span></div>
+<div class="mc-options">
+<button class="mc-btn" onclick="checkMC(this, true, 'dlg-3', '✓ Chính xác！小明：谢谢你的意见。')">A. 很好</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-3', '✗ Chưa đúng：小明：谢谢你的意见。')">B. 不好</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-3', '✗ Chưa đúng：小明：谢谢你的意见。')">C. 很忙</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-3', '✗ Chưa đúng：小明：谢谢你的意见。')">D. 很累</button>
+</div>
+<div class="feedback" style="margin-top:6px;"></div></div>
+<div class="q-item" id="dlg-4">
+<div><b>Câu 4.</b> 小明会好吗？ <span class="hint">(Tiểu Minh có tốt lên không?)</span></div>
+<div class="mc-options">
+<button class="mc-btn" onclick="checkMC(this, true, 'dlg-4', '✓ Chính xác！小红：我的意见是，你去医院看医生，你会好的。')">A. 会</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-4', '✗ Chưa đúng：小红：我的意见是，你去医院看医生，你会好的。')">B. 不会</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-4', '✗ Chưa đúng：小红：我的意见是，你去医院看医生，你会好的。')">C. 很忙</button>
+<button class="mc-btn" onclick="checkMC(this, false, 'dlg-4', '✗ Chưa đúng：小红：我的意见是，你去医院看医生，你会好的。')">D. 很累</button>
+</div>
+<div class="feedback" style="margin-top:6px;"></div></div>
+</div>
+<div class="card">
 <h2>🔤 Bài phụ: Chọn pinyin đúng <span class="badge">Chữ dễ nhầm âm</span></h2>
 <div class="sub" style="margin-bottom:8px;">Chạm vào đáp án đúng — không cần gõ dấu thanh đâu anh.</div>
 <div class="q-item" id="py-1">
@@ -698,7 +781,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 28</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -720,6 +803,7 @@ img, svg { max-width: 100%; }
 <p><b>Bài 5 (Đoạn văn):</b> 胸口 → 医学 → 姨妈 → 意见 → 隐私</p>
 <p><b>Bài 6 (Sắp xếp câu):</b><br>1. 他说胸口不舒服，医生让他去看病。<br>2. 我的姨妈很好，常常给我做好吃的，我很喜欢她。<br>3. 他想学医学，以后做医生，帮助很多病人。</p>
 <p><b>Bài 7 (Đọc hiểu):</b> 1. A — 火锅 &nbsp;|&nbsp; 2. D — 心脏病 &nbsp;|&nbsp; 3. A — 尊重他们，对他们公平</p>
+<p><b>Bài 8 (Nghe hội thoại):</b> 1. A — 医学 &nbsp; 2. A — 因为他的胸口不好 &nbsp; 3. A — 很好 &nbsp; 4. A — 会</p>
 </details>
 </div>
 <div class="footer">Học tốt nhé anh! Làm xong anh chép phần Tổng kết gửi em nhé — câu nào sai em sẽ đưa vào danh sách “Cần ôn thêm”.</div>
@@ -728,7 +812,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-27';
-var TOTAL_TASKS = 28;
+var TOTAL_TASKS = 32;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (瞒)",
@@ -833,6 +917,22 @@ var ITEM_INFO = {
   "read-3": [
     "Đọc hiểu câu 3",
     "A — 尊重他们，对他们公平"
+  ],
+  "dlg-1": [
+    "Nghe hội thoại 1 (小红的姨妈教什么？)",
+    "医学"
+  ],
+  "dlg-2": [
+    "Nghe hội thoại 2 (小明为什么去医院？)",
+    "因为他的胸口不好"
+  ],
+  "dlg-3": [
+    "Nghe hội thoại 3 (小明觉得小红的意见怎么样？)",
+    "很好"
+  ],
+  "dlg-4": [
+    "Nghe hội thoại 4 (小明会好吗？)",
+    "会"
   ],
   "py-1": [
     "Pinyin: 胸口",
@@ -3200,5 +3300,181 @@ function flashReshuffle() { flashShuffleDeck(); flashRender(); }
 
 flashShuffleDeck(); flashRender();
 </script>
+<script>
+// ====== Bài 8: Nghe hội thoại ======
+var DLG_SPEAKERS = [{"id": "ming", "name": "小明", "py": "Xiǎo Míng", "gender": "nam", "vi": "Minh", "color": "#2563eb"}, {"id": "hong", "name": "小红", "py": "Xiǎo Hóng", "gender": "nữ", "vi": "Hồng", "color": "#db2777"}];
+var DLG_LINES = [{"sp": "ming", "zh": "小红，你的姨妈是老师吗？"}, {"sp": "hong", "zh": "我的姨妈是老师，她教医学。"}, {"sp": "ming", "zh": "你的姨妈教医学，她在大学吗？"}, {"sp": "hong", "zh": "她在大学教医学。你的胸口怎么了？"}, {"sp": "ming", "zh": "我的胸口不好，我去医院看医生。"}, {"sp": "hong", "zh": "你去医院，你不要担心，好吗？"}, {"sp": "ming", "zh": "我不担心。你有什么意见？"}, {"sp": "hong", "zh": "我的意见是，你去医院看医生，你会好的。"}, {"sp": "ming", "zh": "谢谢你的意见。"}, {"sp": "ming", "zh": "你去医院，不要说我的隐私，好吗？"}, {"sp": "hong", "zh": "我不说你的隐私。你的隐私，我不问。"}, {"sp": "ming", "zh": "谢谢你。你是我的朋友，我很高兴。"}, {"sp": "hong", "zh": "你的胸口不好，你去医院，我去吗？"}, {"sp": "ming", "zh": "好，明天你去大学，你去看姨妈，我去医院。"}, {"sp": "hong", "zh": "明天我去大学。我的姨妈在大学教医学，我去看她。"}];
+var dlgPlaying = false;
+var dlgPaused = false;
+var dlgRate = 0.88;
+var DLG_VOICE_LS = 'dialogue-voices';
+var DLG_ZH_VOICES = [];
+function dlgVoiceKey(v) { return v.voiceURI || v.name; }
+function dlgSavedVoices() {
+  try { return JSON.parse(localStorage.getItem(DLG_VOICE_LS) || '{}'); } catch (e) { return {}; }
+}
+function dlgSaveVoice(spId, key) {
+  var m = dlgSavedVoices(); m[spId] = key;
+  try { localStorage.setItem(DLG_VOICE_LS, JSON.stringify(m)); } catch (e) {}
+}
+function dlgDefaultKey(spIdx) {
+  if (!DLG_ZH_VOICES.length) return null;
+  return dlgVoiceKey(DLG_ZH_VOICES[Math.min(spIdx, DLG_ZH_VOICES.length - 1)]);
+}
+function dlgVoiceFor(spId) {
+  var saved = dlgSavedVoices()[spId];
+  for (var i = 0; i < DLG_ZH_VOICES.length; i++)
+    if (dlgVoiceKey(DLG_ZH_VOICES[i]) === saved) return DLG_ZH_VOICES[i];
+  var idx = 0;
+  for (var k = 0; k < DLG_SPEAKERS.length; k++) if (DLG_SPEAKERS[k].id === spId) idx = k;
+  var dk = dlgDefaultKey(idx);
+  for (var j = 0; j < DLG_ZH_VOICES.length; j++)
+    if (dlgVoiceKey(DLG_ZH_VOICES[j]) === dk) return DLG_ZH_VOICES[j];
+  return null;
+}
+function dlgPitchFor(spIdx) {
+  var keys = DLG_SPEAKERS.map(function (s) {
+    var v = dlgVoiceFor(s.id); return v ? dlgVoiceKey(v) : null;
+  });
+  var distinct = keys.filter(function (x, i, a) { return a.indexOf(x) === i; }).length;
+  if (distinct > 1) return 1.0;
+  return [0.9, 1.25, 1.0][spIdx % 3];
+}
+function dlgTip(text) {
+  var tip = document.getElementById('dlg-tip');
+  if (tip) tip.textContent = text;
+}
+var DLG_TIP_DEFAULT = "💡 Mẹo: nghe 2–3 lần trước khi hiện lời thoại. Chọn giọng cho từng người ở trên — giọng nam cho người nam, giọng nữ cho người nữ, bấm 🔊 Nghe thử để nghe giọng trước khi chọn.";
+function dlgVoiceNote() {
+  var note = document.getElementById('dlg-voice-note');
+  if (!note) return;
+  if (!DLG_ZH_VOICES.length) {
+    note.textContent = 'Thiết bị chưa tìm thấy giọng tiếng Trung — sẽ dùng giọng mặc định.';
+    return;
+  }
+  var txt = DLG_SPEAKERS.map(function (s) {
+    var v = dlgVoiceFor(s.id);
+    return s.name + ': ' + (v ? v.name : 'giọng mặc định');
+  }).join(' · ');
+  if (DLG_ZH_VOICES.length === 1) txt += '. Thiết bị chỉ có 1 giọng tiếng Trung nên các nhân vật dùng chung giọng, phân biệt bằng cao độ.';
+  note.textContent = txt;
+}
+function buildVoicePickers() {
+  var box = document.getElementById('dlg-voice-pickers');
+  if (!box) return;
+  box.innerHTML = '';
+  if (!('speechSynthesis' in window)) {
+    box.innerHTML = '<span class="hint">Trình duyệt này không hỗ trợ đọc giọng nói.</span>';
+    dlgTip('Trình duyệt này không hỗ trợ đọc giọng nói.');
+    return;
+  }
+  if (!DLG_ZH_VOICES.length) {
+    box.innerHTML = '<span class="hint">Thiết bị chưa tìm thấy giọng tiếng Trung — sẽ dùng giọng mặc định. (Trên điện thoại thường có sẵn giọng tiếng Trung.)</span>';
+    dlgTip('Trên thiết bị này không có giọng tiếng Trung nên chưa chọn được giọng — bài vẫn đọc bằng giọng mặc định.');
+    return;
+  }
+  dlgTip(DLG_TIP_DEFAULT);
+  DLG_SPEAKERS.forEach(function (s) {
+    var row = document.createElement('div');
+    row.className = 'dlg-voice-row';
+    var badge = document.createElement('span');
+    badge.className = 'dlg-sp'; badge.style.background = s.color; badge.textContent = s.name;
+    var lab = document.createElement('span');
+    lab.innerHTML = '<b>Giọng của ' + s.name + '</b> (' + s.vi + ' · ' + (s.gender === 'nam' ? 'Nam' : 'Nữ') + '):';
+    var sel = document.createElement('select');
+    sel.id = 'dlg-voice-' + s.id;
+    DLG_ZH_VOICES.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = dlgVoiceKey(v); o.textContent = v.name;
+      sel.appendChild(o);
+    });
+    var cur = dlgVoiceFor(s.id);
+    if (cur) sel.value = dlgVoiceKey(cur);
+    sel.onchange = function () { setDlgVoice(s.id, sel.value); };
+    var prev = document.createElement('button');
+    prev.className = 'tts-btn'; prev.textContent = '🔊 Nghe thử';
+    prev.onclick = function () { previewDlgVoice(s.id); };
+    row.appendChild(badge); row.appendChild(lab); row.appendChild(sel); row.appendChild(prev);
+    box.appendChild(row);
+  });
+}
+function setDlgVoice(spId, key) { dlgSaveVoice(spId, key); dlgVoiceNote(); }
+function pickDlgVoices() {
+  if (!('speechSynthesis' in window)) return;
+  DLG_ZH_VOICES = window.speechSynthesis.getVoices().filter(function (v) {
+    return (v.lang || '').toLowerCase().indexOf('zh') === 0;
+  });
+  buildVoicePickers();
+  dlgVoiceNote();
+}
+if ('speechSynthesis' in window) {
+  pickDlgVoices();
+  window.speechSynthesis.onvoiceschanged = pickDlgVoices;
+}
+function setDlgRateNum(v) {
+  v = parseFloat(v);
+  if (isNaN(v)) v = 0.88;
+  v = Math.min(1.5, Math.max(0.5, v));
+  dlgRate = v;
+  var r = document.getElementById('dlg-speed-range');
+  var n = document.getElementById('dlg-speed-num');
+  if (r) r.value = v;
+  if (n) n.value = v;
+}
+function dlgSpeak(i, onDone) {
+  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
+  var line = DLG_LINES[i];
+  var spIdx = 0;
+  for (var k = 0; k < DLG_SPEAKERS.length; k++) if (DLG_SPEAKERS[k].id === line.sp) spIdx = k;
+  var u = new SpeechSynthesisUtterance(line.zh);
+  u.lang = 'zh-CN'; u.rate = dlgRate;
+  var v = dlgVoiceFor(line.sp);
+  if (v) u.voice = v;
+  u.pitch = dlgPitchFor(spIdx);
+  u.onend = function () { if (onDone) onDone(); };
+  u.onerror = function () { if (onDone) onDone(); };
+  window.speechSynthesis.speak(u);
+}
+function playDlgAll() {
+  if (!('speechSynthesis' in window)) return;
+  stopDlg();
+  dlgPlaying = true;
+  var i = 0;
+  (function next() {
+    if (!dlgPlaying || i >= DLG_LINES.length) { dlgPlaying = false; dlgPaused = false; updateDlgPauseBtn(); return; }
+    dlgSpeak(i, function () { i++; if (dlgPlaying) next(); });
+  })();
+}
+function updateDlgPauseBtn() {
+  var b = document.getElementById('dlg-pause-btn');
+  if (b) b.textContent = dlgPaused ? '▶️ Tiếp tục nghe' : '⏸️ Tạm dừng';
+}
+function toggleDlgPause() {
+  if (!('speechSynthesis' in window)) return;
+  var ss = window.speechSynthesis;
+  if (ss.paused) { ss.resume(); dlgPaused = false; }
+  else if (ss.speaking) { ss.pause(); dlgPaused = true; }
+  else return;
+  updateDlgPauseBtn();
+}
+function stopDlg() { dlgPlaying = false; dlgPaused = false; if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); window.speechSynthesis.resume(); } updateDlgPauseBtn(); }
+function playDlgLine(i) { stopDlg(); dlgSpeak(i); }
+function previewDlgVoice(spId) {
+  for (var i = 0; i < DLG_LINES.length; i++)
+    if (DLG_LINES[i].sp === spId) { playDlgLine(i); return; }
+}
+function toggleDlgScript() {
+  var el = document.getElementById('dlg-script');
+  var btn = document.getElementById('dlg-toggle');
+  var show = el.style.display === 'none';
+  el.style.display = show ? 'block' : 'none';
+  btn.textContent = show ? '🙈 Ẩn lời thoại' : '👁️ Hiện lời thoại';
+}
+function toggleDlgRuby() {
+  var els = document.querySelectorAll('.dlg-zh');
+  for (var k = 0; k < els.length; k++) els[k].classList.toggle('hide-ruby');
+}
+</script>
+
 </body>
 </html>
