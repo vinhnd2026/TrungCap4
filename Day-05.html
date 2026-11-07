@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -689,6 +689,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="，|不仅|的|我们|朋友|因为|保护|很|还|我们|我们|自己|朋友|重|。|，|要|保护|对|要|要"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="他不想走路，换句话说，他去什么地方都想打车，因为打车很方便，也很快。">
+<div><b>Câu 4:</b> Anh ấy không muốn đi bộ, nói cách khác, anh ấy đi đâu cũng muốn bắt taxi, vì bắt taxi rất tiện, cũng rất nhanh.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="，|，|走路|他|说|不|，|打车|句|什么|他|想|话|。|也|很|地方|因为|想|都|打车|方便|快|，|很|换|去"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết Bài 1</span></h2>
@@ -853,7 +859,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -884,7 +890,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-05';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (谈不上)",
@@ -977,6 +983,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "我们不仅要保护自己，还要保护我们的朋友，因为朋友对我们很重要。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "他不想走路，换句话说，他去什么地方都想打车，因为打车很方便，也很快。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

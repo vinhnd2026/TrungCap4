@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -682,6 +682,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="看|广告|想法|我的|，|表达|朋友|他|看|，|电视|。|他的|也|不|贺卡|既|喜欢|可是|不|想|用|喜欢"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="我既不想看广告，也不想看电视，只想好好保存这张贺卡。">
+<div><b>Câu 4:</b> Tôi vừa không muốn xem quảng cáo, vừa không muốn xem ti vi, chỉ muốn giữ gìn tấm thiệp này thật tốt.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="只|张|不|不|想|好|想|。|，|保存|好|想|这|广告|既|贺卡|也|电视|看|我|，|看"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -821,7 +827,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -852,7 +858,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-01';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (现代)",
@@ -945,6 +951,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "我的朋友想用贺卡表达他的想法，可是他既不喜欢看电视，也不喜欢看广告。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "我既不想看广告，也不想看电视，只想好好保存这张贺卡。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

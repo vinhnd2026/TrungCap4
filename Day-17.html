@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -707,6 +707,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="不|。|很|小|今天|，|花栗鼠|，|，|航行|只|也|好看|能|因为|海浪|我们|花栗鼠|很|很|，|大|好看"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="朋友把花栗鼠带走了，我只好去看海浪，不能和花栗鼠一起玩了。">
+<div><b>Câu 4:</b> Bạn mang sóc chuột đi rồi, tôi đành đi ngắm sóng biển, không thể chơi cùng sóc chuột nữa.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="走|不|海浪|一起|了|把|只|玩|去|。|，|和|，|带|好|了|看|我|能|花栗鼠|花栗鼠|朋友"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết Bài 4</span></h2>
@@ -871,7 +877,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -902,7 +908,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-17';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (西瓜)",
@@ -995,6 +1001,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "今天海浪很大，我们不能航行，只好看花栗鼠，因为花栗鼠很小，也很好看。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "朋友把花栗鼠带走了，我只好去看海浪，不能和花栗鼠一起玩了。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

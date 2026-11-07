@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -617,6 +617,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="每天|看|了|给|就|，|院子|好吃|。|青菜|很|吃|都|的|孩子|馋|孩子|妈妈|所以|做|里|，|种|青菜|了"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="妈妈做的青菜很好吃，我非尝一尝不可，孩子看了也很馋，想马上吃。">
+<div><b>Câu 4:</b> Rau xanh mẹ nấu rất ngon, tôi nhất định phải nếm thử mới được, đứa trẻ nhìn thấy cũng rất thèm, muốn ăn ngay.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="，|不|孩子|很|尝|也|看|，|。|馋|青菜|吃|马上|好吃|尝|妈妈|非|想|我|了|的|一|做|可|，|很"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết Bài 3</span></h2>
@@ -781,7 +787,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -812,7 +818,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-13';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (适合)",
@@ -905,6 +911,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "院子里种的青菜很好吃，孩子看了就馋了，所以妈妈每天都给孩子做青菜吃。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "妈妈做的青菜很好吃，我非尝一尝不可，孩子看了也很馋，想马上吃。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

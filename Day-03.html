@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -749,6 +749,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="了|一|都|看|喜欢|，|我|，|。|很|我的|想|明信片|所以|再|朋友|买|朋友圈|我的|张|明信片"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="多亏朋友告诉我哪里有好看的明信片，我才买到这张很有魅力的明信片。">
+<div><b>Câu 4:</b> Nhờ bạn nói cho tôi biết ở đâu có bưu thiếp đẹp, tôi mới mua được tấm bưu thiếp rất có sức hấp dẫn này.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="告诉|买|到|才|，|哪里|张|明信片|魅力|很|亏|明信片|好看|的|有|朋友|我|有|的|。|这|我|多"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -887,7 +893,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -918,7 +924,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-03';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (后悔)",
@@ -1011,6 +1017,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "我的朋友看了朋友圈，都很喜欢我的明信片，所以我想再买一张明信片。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "多亏朋友告诉我哪里有好看的明信片，我才买到这张很有魅力的明信片。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

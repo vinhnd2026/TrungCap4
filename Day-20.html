@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -684,6 +684,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="友好|故事|还|旅行|心|的|给|去|坐|我们|游轮|因为|了|，|说|幽默|，|总经理|他|很|。|很|开|，|一个"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="我在车站等了他一个小时，白等了，他没有来，我很想回家。">
+<div><b>Câu 4:</b> Tôi đợi anh ấy ở bến xe một tiếng đồng hồ, đợi uổng công, anh ấy không đến, tôi rất muốn về nhà.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="在|，|白|小时|想|我|一个|等|。|他|等|站|了|没有|回|来|，|车|很|家|我|了|他|，"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết Bài 5</span></h2>
@@ -848,7 +854,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -879,7 +885,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-20';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (亲近)",
@@ -972,6 +978,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "总经理坐游轮去旅行，很开心，因为他很友好，还给我们说了一个幽默的故事。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "我在车站等了他一个小时，白等了，他没有来，我很想回家。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

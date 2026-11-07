@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -683,6 +683,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="他|我们|远|都|，|，|喜欢|。|他|累|喜欢|走路|他|他|，|很|走|幽默|，|很|了|因为|可是|很"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="夏天我买了两个西瓜，朋友马上吃掉了一个，还想再吃一个。">
+<div><b>Câu 4:</b> Mùa hè tôi mua hai quả dưa hấu, bạn tôi ăn hết một quả ngay, còn muốn ăn thêm một quả nữa.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="朋友|想|吃|掉|马上|再|夏天|买|我|西瓜|了|还|了|，|。|一个|一个|两个|吃|，"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -828,7 +834,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -859,7 +865,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-16';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (闹饥荒)",
@@ -952,6 +958,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "他走了很远，很累，可是他很幽默，我们都喜欢他，因为他喜欢走路。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "夏天我买了两个西瓜，朋友马上吃掉了一个，还想再吃一个。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

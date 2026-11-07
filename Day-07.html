@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -693,6 +693,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="只|冷|跑步|的|，|知道|我|？|很|知道|佩服|很|可是|天气|每天|他|摄氏度|我的|都|不|。|气温|多少|，|朋友|，|是|今天|去|我"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="我想去景点看风景，偏偏气温很低，还连续下雨，我只好在家里学习。">
+<div><b>Câu 4:</b> Tôi muốn đến điểm tham quan ngắm cảnh, đúng lúc nhiệt độ rất thấp, còn mưa liên tục, tôi đành ở nhà học.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="看|学习|很|我|偏偏|风景|里|下雨|。|我|家|，|，|去|在|好|想|，|还|气温|景点|只|连续|低"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết tuần</span></h2>
@@ -835,7 +841,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -866,7 +872,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-07';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (到底)",
@@ -959,6 +965,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "今天的气温是多少摄氏度？我不知道，只知道天气很冷，可是我的朋友每天都去跑步，我很佩服他。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "我想去景点看风景，偏偏气温很低，还连续下雨，我只好在家里学习。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

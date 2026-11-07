@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -706,6 +706,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="告诉|是|他|点|一定|很|这|。|心意|用|一|微信|高兴|我的|，|我|朋友|，"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="别说问候朋友，就连用微信发贺卡我也没有时间，因为我要好好学习。">
+<div><b>Câu 4:</b> Đừng nói hỏi thăm bạn bè, ngay cả gửi thiệp bằng WeChat tôi cũng không có thời gian, vì tôi phải học thật tốt.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="就|连|因为|学习|我|要|。|用|贺卡|朋友|，|微信|别|好|没有|好|说|发|时间|我|问候|也|，"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -843,7 +849,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -874,7 +880,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-04';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (美中不足)",
@@ -967,6 +973,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "这是一点心意，我用微信告诉我的朋友，他一定很高兴。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "别说问候朋友，就连用微信发贺卡我也没有时间，因为我要好好学习。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

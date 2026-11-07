@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -712,6 +712,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="因为|我的|觉得|，|是|朋友|。|不|的|你|有意|，|，|好|是|我|要|他|不|不|他|好|对|很|他"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="天气很好，要不我们一起去看风景吧，还可以去公园走一走，看一看风景。">
+<div><b>Câu 4:</b> Trời rất đẹp, hay là chúng ta cùng nhau đi ngắm cảnh đi, còn có thể đến công viên đi dạo, ngắm phong cảnh.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="去|一|看|看|公园|风景|一起|我们|，|还|要|吧|看|走|很|去|，|天气|不|。|一|风景|，|好|可以|走"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -849,7 +855,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -880,7 +886,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-08';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (连续)",
@@ -973,6 +979,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "他不是有意的，你不要觉得他不好，因为他是我的朋友，对我很好。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "天气很好，要不我们一起去看风景吧，还可以去公园走一走，看一看风景。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",
