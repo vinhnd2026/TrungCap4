@@ -14,19 +14,18 @@ Bộ bài học Trung cấp 4: 42 ngày, mỗi ngày 5 từ mới, học từ B�
 | HSK 2 | 213 | 43 | [Mở](https://vinhnd2026.github.io/HSK2/) |
 | HSK 3 | 197 | 40 | [Mở](https://vinhnd2026.github.io/HSK3/) |
 | HSK 4 | 191 | 39 | [Mở](https://vinhnd2026.github.io/HSK4/) |
-| HSK 3 — bản theo ngày (Homework) | 198 | 36 | [Mở](https://vinhnd2026.github.io/Homework/) |
 | Trung cấp 1 | 266 | 54 | [Mở](https://vinhnd2026.github.io/TrungCap1/) |
 | Trung cấp 2 | 355 | 71 | [Mở](https://vinhnd2026.github.io/TrungCap2/) |
 | Trung cấp 3 | 236 | 48 | [Mở](https://vinhnd2026.github.io/TrungCap3/) |
 | Trung cấp 4 | 206 | 42 | [Mở](https://vinhnd2026.github.io/TrungCap4/) |
 | Cao cấp 1 | 447 | 90 | [Mở](https://vinhnd2026.github.io/CaoCap1/) |
-| Cao cấp 2 | 405 | 81 | ⏳ đang hoàn thiện |
-| Cao cấp 3 | 353 | 71 | ⏳ đang hoàn thiện |
-| Cao cấp 4 | 357 | 72 | ⏳ đang hoàn thiện |
+| Cao cấp 2 | 405 | 81 | [Mở](https://vinhnd2026.github.io/CaoCap2/) |
+| Cao cấp 3 | 353 | 71 | [Mở](https://vinhnd2026.github.io/CaoCap3/) |
+| Cao cấp 4 | 357 | 72 | [Mở](https://vinhnd2026.github.io/CaoCap4/) |
 
 ## Bổ sung (học sau khi xong 42 ngày)
 
-- **📖 Ôn tập Ngữ pháp Trung cấp 4 (40 điểm + 33 bài tập):** [Bai-Hoc-On-Ngu-Phap-TrungCap4.html](https://vinhnd2026.github.io/TrungCap4/Bai-Hoc-On-Ngu-Phap-TrungCap4.html) — pinyin hiện sẵn trong mọi ví dụ.
+- **📖 Ôn tập Ngữ pháp Trung cấp 4 (40 điểm + 33 bài tập + mục Động từ ly hợp):** [Bai-Hoc-On-Ngu-Phap-TrungCap4.html](https://vinhnd2026.github.io/TrungCap4/Bai-Hoc-On-Ngu-Phap-TrungCap4.html) — pinyin hiện sẵn trong mọi ví dụ.
 - **📚 Bài Tổng Kết Trung cấp 4:** [Bai-Hoc-Tong-Ket-TrungCap4.html](https://vinhnd2026.github.io/TrungCap4/Bai-Hoc-Tong-Ket-TrungCap4.html) — flashcard toàn bộ từ, bảng từ vựng 10 bài, 8 bài tập tổng kết (62 bài tập), truyện tổng kết dùng đủ toàn bộ từ vựng.
 
 Bấm vào từng ngày bên dưới để mở thẳng trang bài học của ngày đó.
