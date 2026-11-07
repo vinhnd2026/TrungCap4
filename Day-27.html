@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -689,6 +689,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="因为|是|你|尊重|不|我|不|也|你|这|，|。|也|要|，|你|，|请|我的|尊重|很|，|我|我|欺骗|要|要|别人|告诉|隐私"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="姨妈说胸口不舒服，然而她不想去医院，只想在家里好好休息。">
+<div><b>Câu 4:</b> Dì nói ngực khó chịu, tuy nhiên dì không muốn đi bệnh viện, chỉ muốn ở nhà nghỉ ngơi thật tốt.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="不|好|舒服|里|，|休息|在|说|她|而|不|然|，|去|姨妈|胸口|只|。|好|家|医院|想|想"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết tuần</span></h2>
@@ -840,7 +846,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -871,7 +877,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-27';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (瞒)",
@@ -964,6 +970,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "这是我的隐私，请你不要告诉别人，也不要欺骗我，因为我很尊重你，你也要尊重我。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "姨妈说胸口不舒服，然而她不想去医院，只想在家里好好休息。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -663,6 +663,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="，|始|家|开|我们|也|家|大|保护|一起|，|我们|不|敌人|，|努力|学习|我们|的|保护|来|，|正式|一起|了|要|了|要|。"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="他去求职，没有找到好工作，大不了再找一次，他对自己很有信心。">
+<div><b>Câu 4:</b> Anh ấy đi xin việc, không tìm được việc tốt, cùng lắm thì tìm lại một lần nữa, anh ấy rất tự tin vào bản thân.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="再|有|自己|。|工作|对|好|不|找|求职|他|信心|，|找|没有|一次|他|大|，|到|了|，|去|很"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4 · Tổng kết Bài 8</span></h2>
@@ -827,7 +833,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -858,7 +864,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-33';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (相亲)",
@@ -951,6 +957,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "敌人来了，我们要一起保护家，也要正式开始学习，大不了我们一起努力，保护我们的家。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "他去求职，没有找到好工作，大不了再找一次，他对自己很有信心。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

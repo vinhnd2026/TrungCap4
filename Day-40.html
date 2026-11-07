@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -662,6 +662,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="用|看|，|好|很|特写|看|清楚|得|我们|不|就|，|清楚|，|，|很|看|打|我们|特写|很|台球|这个|很|很|喜欢|远|也|。"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="比赛的特写看得很清楚，我们在家里看就行，用不着去很远的地方。">
+<div><b>Câu 4:</b> Cảnh cận của trận đấu xem rất rõ, chúng ta ở nhà xem là được, không cần phải đi đến nơi rất xa.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="清楚|地方|，|很|的|不|比赛|远|在|。|看|特写|很|里|，|去|我们|着|得|就|行|的|家|看|用"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -807,7 +813,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -838,7 +844,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-40';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (镜头)",
@@ -931,6 +937,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "这个特写很好，我们看得很清楚，也很喜欢打台球，不用看很远，我们看特写就很清楚。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "比赛的特写看得很清楚，我们在家里看就行，用不着去很远的地方。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

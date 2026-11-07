@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -685,6 +685,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="这个|我|电视|了|完|，|很|电视|很|觉得|家|电视|的|有意思|天线|，|我|很|好|我|看|看|我|，|。|，|高|就|很|电影|喜欢"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="他每天都睡眠不好，今天总算好了，早上很早就去工作了，也很高兴。">
+<div><b>Câu 4:</b> Ngày nào giấc ngủ của anh ấy cũng không tốt, hôm nay cuối cùng cũng tốt rồi, buổi sáng đi làm từ rất sớm, cũng rất vui.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="工作|，|好|也|了|就|不|每天|高兴|算|早上|好|睡眠|了|早|今天|，|。|总|都|很|去|很|，|他"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -832,7 +838,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -863,7 +869,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-36';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (纪念)",
@@ -956,6 +962,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "我家的电视天线很高，电视很好，我很喜欢看电视，我就看完了这个电影，我觉得很有意思。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "他每天都睡眠不好，今天总算好了，早上很早就去工作了，也很高兴。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",

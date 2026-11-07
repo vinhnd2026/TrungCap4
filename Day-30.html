@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -686,6 +686,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="因为|想|希|求职|找|电视|，|学习|好|好|，|好|工作|他|好|望|建议|。|从|来|只|去|，|不|他|好|他|到|学习|看|我|，"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="我的朋友从来不说别人不好，他的口音很好听，大家都喜欢听他说。">
+<div><b>Câu 4:</b> Bạn tôi chưa bao giờ nói người khác không tốt, giọng của anh ấy rất hay, mọi người đều thích nghe anh ấy nói.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="他的|，|别人|他|不|听|好听|。|从|都|很|说|来|大家|，|口音|说|朋友|我的|不|喜欢|好"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu Trung cấp 4</span></h2>
@@ -832,7 +838,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -863,7 +869,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'trungcap4-Day-30';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (笔试)",
@@ -956,6 +962,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "他去求职，希望找到好工作，我建议他好好学习，因为他从来不看电视，只想好好学习。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "我的朋友从来不说别人不好，他的口音很好听，大家都喜欢听他说。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",
